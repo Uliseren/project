@@ -24,6 +24,24 @@ When starting any task, after reading this file:
 - This meta-repo holds only onboarding / shared docs. Code changes go in
   `back/` or `front/`, never here.
 
+## Verification
+
+Before committing, verify your change in the repo you touched. Deploys are
+autonomous on push to `master` and there is **no test gate in CI**, so the
+local check is the only safety net.
+
+```bash
+# back/
+cd back && uv run ruff check . && uv run pytest
+
+# front/
+cd front && npx tsc --noEmit && npm run lint
+```
+
+Note: test coverage is sparse (`back/CLAUDE.md` → "Known pitfalls"; front has
+no tests yet). A green run is necessary but not sufficient — sanity-check the
+behaviour you changed.
+
 ## Bootstrap
 
 `./init.sh` clones both repos and installs deps. Re-runnable.
