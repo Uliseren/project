@@ -4,7 +4,7 @@ Umbrella for the Uliseren household-expenses app. Two real codebases are
 cloned as siblings by `init.sh`:
 
 - `back/` — Django 5 + DRF + SQLite. Source of truth: `back/CLAUDE.md`.
-- `front/` — Next.js 15 + TS + Tailwind v4 + shadcn. Source of truth: `front/CLAUDE.md`.
+- `front/` — Next.js + TS + Tailwind v4 + shadcn. Source of truth: `front/CLAUDE.md`.
 
 Each is an independent git repo (gitignored here) and deploys autonomously
 on push to `master`. Touch them with separate commits in their own repo.
