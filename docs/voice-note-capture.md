@@ -1,6 +1,8 @@
 # Dictating the receipt note
 
-**Status: proposal, not built.** Written 2026-09-11; the decision is Héctor's.
+**Status: decided 2026-09-11 — option C.** Voice input is the keyboard's own
+dictation, announced by a hint line under the note field. No mic button and
+no transcription endpoint exist; B is only on the table if C falls short.
 
 What the receipt note is and how it reaches the classifier lives in
 `back/RECEIPT_OCR.md` → "User note". This document only covers how to
@@ -123,9 +125,9 @@ wanted after real use, build B. Not A.**
 
 1. **Now, C.** Try the keyboard mic in the note field on both phones, inside
    the installed app, for a couple of weeks. If it works, this is solved at
-   no cost. The only optional change is one line of helper text under the
-   field ("también puedes dictarla con el micro del teclado"), left out on
-   purpose until this is decided.
+   no cost. The field says so under it ("También puedes dictarla con el
+   micro del teclado", in `front/src/components/generic/receipt-note-field.tsx`),
+   because a feature nobody knows about is one nobody uses.
 2. **If C falls short** — it fails inside the installed app on the iPhone, or
    the extra tap means nobody uses it — **B**. That is the answer to the
    question: transcribe **in the back**. The in-browser option is the one
